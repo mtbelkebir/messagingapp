@@ -43,19 +43,19 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget page;
     switch (_selectedindex) {
       case 0:
-        page = randompage();
+        page = const Randompage();
         break;
       case 1:
-        page = randompage();
+        page = const Randompage();
         break;
       case 2:
-        page = randompage();
+        page = const Randompage();
         break;
       case 3:
-        page = randompage();
+        page = const Randompage();
         break;
       default:
-        page = randompage();
+        page = const Randompage();
         break;
     }
 
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         child: page,
       ),
-      bottomNavigationBar: navbar(
+      bottomNavigationBar: Navbar(
         currentIndex: _selectedindex,
         onTap: _onDestinationTapped,
       ),
@@ -75,30 +75,30 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class randompage extends StatefulWidget {
-  const randompage({super.key});
+class Randompage extends StatefulWidget {
+  const Randompage({super.key});
 
   @override
-  State<randompage> createState() => _randompageState();
+  State<Randompage> createState() => _RandompageState();
 }
 
-class _randompageState extends State<randompage> {
+class _RandompageState extends State<Randompage> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }
 }
 
-class navbar extends StatefulWidget {
+class Navbar extends StatefulWidget {
   final int currentIndex;
   final void Function(int) onTap;
-  const navbar({super.key, required this.currentIndex, required this.onTap});
+  const Navbar({super.key, required this.currentIndex, required this.onTap});
 
   @override
-  State<navbar> createState() => _navbarState();
+  State<Navbar> createState() => _NavbarState();
 }
 
-class _navbarState extends State<navbar> {
+class _NavbarState extends State<Navbar> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
