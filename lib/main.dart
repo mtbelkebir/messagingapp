@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messagingapp/pages/home_screen.dart';
 import 'widgets/navbar.dart';
 
 void main() {
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget page;
     switch (_selectedindex) {
       case 0:
-        page = const Randompage();
+        page = const HomeScreen();
         break;
       case 1:
         page = const Randompage();
