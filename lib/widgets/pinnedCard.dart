@@ -11,8 +11,7 @@ class PpinnedCardState extends State<PinnedCard> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    return Center(
-        child: Card(
+    return Card(
       clipBehavior: Clip.hardEdge,
       child: InkWell(
           splashColor: theme.primaryColorLight,
@@ -20,20 +19,49 @@ class PpinnedCardState extends State<PinnedCard> {
             debugPrint('Card tapped.');
           },
           child: const SizedBox(
-              height: 100,
-              width: 200,
+              height: 140,
+              width: 250,
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(15.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage('images/person.jpg'),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage('images/person.jpg'),
+                        ),
+                        SizedBox(width: 30, height: 0),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Nom',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'prenom',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        )
+                      ],
                     ),
-                    Text('A card that can be tapped'),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'A card that can be tapped',
+                      style: TextStyle(
+                          fontSize: 14, fontWeight: FontWeight.normal),
+                      textAlign: TextAlign.start,
+                    ),
                   ],
                 ),
               ))),
-    ));
+    );
   }
 }
